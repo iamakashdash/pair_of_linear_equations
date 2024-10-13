@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Equation Solver</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Linear Equation Solver</h1>
+        <form action="/solve" method="POST">
+            <label for="equation1">Equation 1:</label>
+            <input type="text" id="equation1" name="equation1" placeholder="e.g. 2x+3y=12" required>
+
+            <label for="equation2">Equation 2:</label>
+            <input type="text" id="equation2" name="equation2" placeholder="e.g. 4x-5y=7" required>
+
+            <button type="submit">Solve</button>
+        </form>
+
+        {% if result %}
+            <div class="result">
+                <h2>{{ result }}</h2>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
